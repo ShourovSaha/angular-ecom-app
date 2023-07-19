@@ -9,13 +9,19 @@ import { ProductRepository } from "../model/products.repositiry";
 
 export class StoreComponent{
 
+    public selectedCategory: string = null;
+
     constructor(private productsRepo: ProductRepository){}
 
     get products(): Product[]{
-        return this.productsRepo.GetProductsByCategory();
+        return this.productsRepo.GetProductsByCategory(this.selectedCategory);
     }
 
     get categories(): string[]{
         return this.productsRepo.GetCategories();
+    }
+
+    changeCategory(newCategory?: string){
+        this.selectedCategory = newCategory;
     }
 }
