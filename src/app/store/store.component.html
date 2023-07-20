@@ -6,10 +6,9 @@
     </div>
     <div class="row">
         <div class="col-3 p-2">
-           <button class="btn btn-block btn-outline-primary" (click)="changeCategory()">Home</button>
-           <button class="btn btn-block btn-outline-primary" *ngFor="let category of categories" 
-                   [class.active]="category == selectedCategory"
-                   (click)="changeCategory(category)">{{category}}</button>
+            <button class="btn btn-block btn-outline-primary" (click)="changeCategory()">Home</button>
+            <button class="btn btn-block btn-outline-primary" *ngFor="let category of categories"
+                [class.active]="category == selectedCategory" (click)="changeCategory(category)">{{category}}</button>
         </div>
         <div class="col-9 p-2">
             <div *ngFor="let product of products" class="card m-1 p-1 bg-light">
@@ -21,6 +20,20 @@
                 </h4>
                 <div class="card-text bg-white p-1">{{product.description}}</div>
             </div>
+            <div class="from-inline float-left mr-1">
+                <select class="form-control" [value]="productPerPage" (change)="changePageSize($event)">
+                    <option value="3">3 items per page</option>
+                    <option value="5">5 items per page</option>
+                    <option value="10">10 items per page</option>
+                </select>
+            </div>
+            <div class="btn-group float-right">
+                <button class="btn btn-outline-primary" *ngFor="let pageNumber of pageNumbers"
+                    [class.active]="pageNumber == selectedPageIndex" (click)="changePage(pageNumber)">
+                    {{pageNumber}}
+                </button>
+            </div>
         </div>
     </div>
+
 </div>
