@@ -4,11 +4,14 @@ import { FormsModule } from "@angular/forms";
 import { ModelModule } from "../model/model.module";
 import { StoreComponent } from "./store.component";
 import { CartSummaryComponent } from "./cartSummary.component";
+import { CartDetaileComponent } from "./cartDetails.component";
+import { CheckoutComponent } from "./checkOut.component";
+import { RouterModule } from "@angular/router";
 
 
 @NgModule({
-    imports: [BrowserModule, FormsModule, ModelModule],
-    declarations: [StoreComponent, CartSummaryComponent],
+    imports: [BrowserModule, FormsModule, ModelModule, RouterModule],
+    declarations: [StoreComponent, CartSummaryComponent, CartDetaileComponent, CheckoutComponent],
     exports: [StoreComponent]
 })
 
