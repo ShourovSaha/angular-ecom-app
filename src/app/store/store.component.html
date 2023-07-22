@@ -1,7 +1,8 @@
 <div class="container-fluid">
     <div class="row">
         <div class="col bg-dark text-white">
-            Sports Store
+            <a class="navbar-brabd">Sports Store</a>
+            <cart-summary></cart-summary>
         </div>
     </div>
     <div class="row">
@@ -18,7 +19,13 @@
                         {{product.price | currency: "USD": "symbol": "2.2-2"}}
                     </span>
                 </h4>
-                <div class="card-text bg-white p-1">{{product.description}}</div>
+                <div class="card-text bg-white p-1">
+                    {{product.description}}
+                    <button class="btn btn-sm btn-success float-right" (click)="addProductToCart(product)">
+                        Add to Cart
+                    </button>
+                </div>
+                
             </div>
             <div class="from-inline float-left mr-1">
                 <select class="form-control" [value]="productPerPage" (change)="changePageSize($event)">
