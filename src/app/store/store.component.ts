@@ -2,7 +2,7 @@ import { Component } from "@angular/core";
 import { Cart } from "../model/cart.model";
 import { Product } from "../model/product.model";
 import { ProductRepository } from "../model/products.repositiry";
-import { Route, Router } from "@angular/router";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "store",

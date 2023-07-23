@@ -27,24 +27,23 @@ export class Cart {
         this.recalculate();
     }
 
-    updateQuantity(product: Product, quantity: number) {
+    updateQuantity(id: number, event: Event) {
 
-        let cartProduct = this.cartLine.find(item => item.product.id == product.id);
+        let cartProduct = this.cartLine.find(item => item.product.id == id);
 
         if (cartProduct != undefined) {
-            cartProduct.quantity += quantity;
+            cartProduct.quantity += Number((event.target as HTMLInputElement).value);
         }
 
         this.recalculate();
     }
 
-    removeProduct(product: Product) {
+    removeProduct(id: number) {
 
-        let cartIndex = this.cartLine.findIndex(item => item.product.id == product.id);
+        let cartIndex = this.cartLine.findIndex(item => item.product.id == id);
         if (cartIndex > -1) {
-            this.cartLine.slice(cartIndex, 1);
+            this.cartLine.splice(cartIndex, 1);
         }
-
         this.recalculate();
     }
 
