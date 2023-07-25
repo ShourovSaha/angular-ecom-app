@@ -8,7 +8,6 @@ import { CartDetailsComponent } from "./cartDetails.compomnent";
 import { CheckoutComponent } from "./checkOut.component";
 import { RouterModule } from "@angular/router";
 
-
 @NgModule({
     imports: [BrowserModule, FormsModule, ModelModule, RouterModule],
     declarations: [StoreComponent, CartSummaryComponent, CartDetailsComponent, CheckoutComponent],

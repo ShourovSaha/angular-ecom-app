@@ -46,4 +46,11 @@
             </table>
         </div>
     </div>
+    <div class="row">
+        <div class="col text-center">
+            <button class="btn btn-primary m-1" routerLink="/store">Continue shopping</button>
+            <button class="btn btn-secondary m-1" routerLink="/checkout" [disabled]="cartService.cartLine.length == 0">Checkout</button>
+        </div>
+
+    </div>
 </div>
